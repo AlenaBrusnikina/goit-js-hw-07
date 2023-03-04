@@ -11,14 +11,13 @@ galleryEl.insertAdjacentHTML('beforeend', imgMarkup);
 
 function createsMarkupGalleryItems(galleryItems) {
   return galleryItems
-    .map(({ description, original, preview }) => {
+    .map(({ galleryItems }) => {
       return `<div class="gallery__item">
     <a class="gallery__link" href="large-image.jpg">
     <img
         class="gallery__image"
-        src="${preview}"
-        data-source="${original}"
-        alt="${description}"
+        src="${galleryItems.preview}"
+        alt="${galleryItems.description}"
     />
     </a>
 </div>`;
