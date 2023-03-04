@@ -3,28 +3,27 @@ import { galleryItems } from './gallery-items.js';
 
 console.log(galleryItems);
 
+
 const galleryEl = document.querySelector('.gallery');
 const imgMarkup = createsMarkupGalleryItems(galleryItems);
 
 galleryEl.insertAdjacentHTML('beforeend', imgMarkup);
 
-new SimpleLightbox('.gallery a', {
-  captionsData: 'alt',
-  captionDelay: 250,
-});
-
 function createsMarkupGalleryItems(galleryItems) {
   return galleryItems
-    .map(items => {
-      return `<li class="gallery__item">
-    <a class="gallery__link" href="${items.original}">
+    .map((items) => {
+      return `<div class="gallery__item">
+    <a class="gallery__link" href="large-image.jpg">
     <img
         class="gallery__image"
         src="${items.preview}"
         alt="${items.description}"
     />
     </a>
-</li>`;
+</div>`;
     })
     .join('');
 }
+
+console.log(imgMarkup);
+
