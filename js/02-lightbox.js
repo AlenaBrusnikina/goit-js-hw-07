@@ -3,7 +3,6 @@ import { galleryItems } from './gallery-items.js';
 
 console.log(galleryItems);
 
-
 const galleryEl = document.querySelector('.gallery');
 const imgMarkup = createsMarkupGalleryItems(galleryItems);
 
@@ -14,10 +13,9 @@ new SimpleLightbox('.gallery a', {
   captionDelay: 250,
 });
 
-
 function createsMarkupGalleryItems(galleryItems) {
   return galleryItems
-    .map((items) => {
+    .map(items => {
       return `<li class="gallery__item">
     <a class="gallery__link" href="${items.original}">
     <img
@@ -32,4 +30,3 @@ function createsMarkupGalleryItems(galleryItems) {
 }
 
 console.log(imgMarkup);
-
