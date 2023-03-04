@@ -9,18 +9,24 @@ const imgMarkup = createsMarkupGalleryItems(galleryItems);
 
 galleryEl.insertAdjacentHTML('beforeend', imgMarkup);
 
+new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
+
+
 function createsMarkupGalleryItems(galleryItems) {
   return galleryItems
     .map((items) => {
-      return `<div class="gallery__item">
-    <a class="gallery__link" href="large-image.jpg">
+      return `<li class="gallery__item">
+    <a class="gallery__link" href="${items.original}">
     <img
         class="gallery__image"
         src="${items.preview}"
         alt="${items.description}"
     />
     </a>
-</div>`;
+</li>`;
     })
     .join('');
 }
